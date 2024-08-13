@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TransNotion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-mode.css" asp-append-version="true" />
+</head>
+<body class="bg-light text-dark">
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-pink text-light sidebar" id="sidebar">
+            <div class="sidebar-header text-center">
+                <h4>TransNotion</h4>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Index">
+                        <i class="bi bi-house-door"></i> Início
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Tasks">
+                        <i class="bi bi-check-circle"></i> Tarefas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Notes">
+                        <i class="bi bi-file-earmark-text"></i> Notas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Projects">
+                        <i class="bi bi-folder"></i> Projetos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Ideas">
+                        <i class="bi bi-lightbulb"></i> Ideias
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Calendar">
+                        <i class="bi bi-calendar"></i> Calendário
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Settings">
+                        <i class="bi bi-gear"></i> Configurações
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Profile">
+                        <i class="bi bi-person-circle"></i> Perfil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Logout">
+                        <i class="bi bi-box-arrow-right"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="flex-grow-1 d-flex flex-column">
+            <header class="bg-secondary text-light">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container">
+                        <button class="btn btn-outline-light" id="menu-toggle">Toggle Menu</button>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav ml-auto">
+                                <!-- Add other navbar items if needed -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main role="main" class="container-fluid my-4 flex-grow-1">
+                @RenderBody()
+            </main>
+            <footer class="bg-pink text-light py-3">
+                <div class="container">
+                    <div class="d-flex justify-content-between">
+                        <div>&copy; 2024 - TransNotion</div>
+                        <a class="text-light" asp-area="" asp-page="/Privacy">Privacy</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/menu-toggle.js" asp-append-version="true"></script>
+</body>
+</html>

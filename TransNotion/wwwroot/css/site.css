@@ -1,0 +1,59 @@
+/* Ajustes para o menu lateral */
+.sidebar .nav-link {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    padding: 1rem; /* Adiciona um pouco de espaço dentro do botão */
+    margin-bottom: 0.5rem; /* Adiciona um pequeno espaço entre os botões */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .sidebar .nav-link i {
+        margin-right: 8px;
+        font-size: 1.5rem; /* Aumenta o tamanho dos ícones */
+    }
+
+/* Estilo para o container da página quando o menu lateral está visível ou oculto */
+#wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #ff69b4; /* Cor rosa do menu */
+}
+
+#page-content-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #ff69b4; /* Cor do rodapé */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Ajustes para quando o menu lateral estiver oculto */
+#wrapper.toggled #sidebar {
+    display: none;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Garantir que o botão "Toggle Menu" não desapareça */
+#menu-toggle {
+    margin-right: 15px;
+}

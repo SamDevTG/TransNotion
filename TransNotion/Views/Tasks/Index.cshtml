@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Models.Tasks>
+
+@{
+    ViewData["Title"] = "Tasks";
+}
+
+<h1>Tasks</h1>
+
+<p>
+    <a asp-controller="Tasks" asp-action="Create" class="btn btn-primary">Create New Task</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Description</td>
+                <td>@item.DueDate?.ToShortDateString()</td>
+                <td>@item.Priority</td>
+                <td>@(item.IsCompleted ? "Completed" : "Pending")</td>
+            </tr>
+        }
+    </tbody>
+</table>
