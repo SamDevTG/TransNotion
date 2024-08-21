@@ -1,59 +1,277 @@
-/* Ajustes para o menu lateral */
-.sidebar .nav-link {
+/* Estilos Gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Wrapper geral */
+#wrapper {
+    display: flex;
     width: 100%;
-    text-align: center;
-    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
-    padding: 1rem; /* Adiciona um pouco de espaço dentro do botão */
-    margin-bottom: 0.5rem; /* Adiciona um pequeno espaço entre os botões */
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background-color: #ff69b4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.nav {
+    width: 100%;
+    padding: 0;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
-    .sidebar .nav-link i {
-        margin-right: 8px;
-        font-size: 1.5rem; /* Aumenta o tamanho dos ícones */
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: #ff85c1;
+        text-decoration: none;
+        color: #fff;
     }
 
-/* Estilo para o container da página quando o menu lateral está visível ou oculto */
-#wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 100vh;
-}
+    .nav-link i {
+        margin-right: 10px;
+        font-size: 1.5rem;
+    }
 
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background-color: #ff69b4; /* Cor rosa do menu */
-}
-
+/* Page Content */
 #page-content-wrapper {
-    flex-grow: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-left: 250px;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #6c757d;
+    padding: 15px;
+}
+
+#menu-toggle {
+    background-color: #ff69b4;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+    #menu-toggle:hover {
+        background-color: #ff85c1;
+    }
+
+/* Main Content */
+.main-content {
     padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background: linear-gradient(to right, #F7A8B8, #7F9CCF); /* Gradiente de Rosa Claro para Azul Claro */
+    color: #FFFFFF !important;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .jumbotron h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .jumbotron p {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+/* Cards Estilo Notion */
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+    .card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Efeito de destaque no hover */
+        transform: translateY(-5px); /* Leve elevação no hover */
+    }
+
+.card-header {
+    background-color: #F8F9FA;
+    color: #333;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
 }
 
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #343a40;
+}
+
+.card-text {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Estilos para links dentro dos cards */
+.card a {
+    color: #FF69B4;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+    .card a:hover {
+        color: #FF85C1;
+        text-decoration: underline;
+    }
+
+
+/* Botões */
+.btn-light {
+    background-color: #FFFFFF;
+    color: #333;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+}
+
+    .btn-light:hover {
+        background-color: #F0F0F0;
+    }
+
+.btn-primary {
+    background-color: #7F9CCF;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+    .btn-primary:hover {
+        background-color: #6A8BCC; /* Azul mais escuro para hover */
+    }
+
+/* Footer */
 footer {
-    margin-top: auto;
-    background-color: #ff69b4; /* Cor do rodapé */
-    color: white;
+    background-color: #ff69b4;
+    color: #fff;
     text-align: center;
     padding: 10px;
 }
 
-/* Ajustes para quando o menu lateral estiver oculto */
-#wrapper.toggled #sidebar {
-    display: none;
+/* Responsividade */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 0;
+        padding: 0;
+    }
+
+        #sidebar.collapsed {
+            width: 250px;
+            padding-top: 20px;
+        }
+
+    #page-content-wrapper {
+        margin-left: 0;
+    }
+
+        #page-content-wrapper.expanded {
+            margin-left: 250px;
+        }
+
+    .jumbotron {
+        padding: 1.5rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+/* Botões */
+.btn-light {
+    background-color: #FFFFFF;
+    color: #333;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-#wrapper.toggled #page-content-wrapper {
-    margin-left: 0;
-    width: 100%;
+    .btn-light:hover {
+        background-color: #FFB6C1; /* Rosa claro no hover */
+    }
+
+.btn-primary {
+    background-color: #FF69B4; /* Rosa forte */
+    color: #FFFFFF;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Garantir que o botão "Toggle Menu" não desapareça */
-#menu-toggle {
-    margin-right: 15px;
+    .btn-primary:hover {
+        background-color: #FF85C1; /* Rosa mais claro no hover */
+    }
+
+.btn-outline-pink {
+    color: #ff69b4;
+    border-color: #ff69b4;
 }
+
+    .btn-outline-pink:hover {
+        background-color: #ff69b4;
+        color: #fff;
+        border-color: #ff69b4;
+    }

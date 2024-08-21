@@ -8,7 +8,6 @@
         public bool IsCompleted { get; set; }
         public int Priority { get; set; } // 1-High, 2-Medium, 3-Low
 
-        // Relacionamentos
         public int UserId { get; set; }
         public required User User { get; set; }
         public int? ProjectId { get; set; }
