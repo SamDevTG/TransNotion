@@ -13,5 +13,11 @@ namespace YourNamespace.Controllers
         {
             return View();
         }
+
+        // Novo método para a página de Notas
+        public IActionResult Notas()
+        {
+            return View();
+        }
     }
 }
